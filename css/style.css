@@ -49,7 +49,7 @@ nav {
         rgb(241, 241, 241) 85%,
         rgb(228, 229, 177) 92%,
         rgb(207, 210, 96) 100%), 
-        url(../images/halftone-supply.jpg);
+        url(../assets/halftone-supply.jpg);
     background-size: cover, auto 70%;
     background-blend-mode: hard-light;
     background-origin: padding-box;

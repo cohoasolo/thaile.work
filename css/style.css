@@ -12,9 +12,6 @@ body {
     line-height: 1.25;
     gap: var(--gap);
     padding: 0;
-    display: flex;
-    overflow: hidden;
-    /* flex-wrap: wrap; */
     margin: 0;
     font-family: "Inconsolata", monospace;
 }
@@ -23,9 +20,10 @@ body {
     width: var(--navWidth);
     max-width: 400px;
     height: 100vh;
-    position: relative;
-    overflow: hidden scroll;
+    position: fixed;
+    overflow-y: scroll;
     scrollbar-width: none;
+    left: 0;
     z-index: 2;
     /* padding-right: var(--gap); */
 }
@@ -74,23 +72,31 @@ nav {
     margin-bottom: 20px;
 }
 
-.datetime {
+.nav_datetime {
     display: flex;
     justify-content: space-between;
 }
 
+.align-right {
+    text-align: right;
+}
+
 .page_container {
-    --containerWidth1: calc(100vw - var(--navWidth) - var(--margin)/2 - var(--gap));
-    --containerWidth2: calc(100vw - 400px - var(--margin)/2 - var(--gap));
+    /* 
+    width 1 - for screen-width 1301px-1649px (default)
+    width 2 - for screen-width > 1650px
+    */
+    --containerWidth1: calc(100vw - var(--navWidth) - var(--margin)*2 - var(--gap));
+    --containerWidth2: calc(100vw - 400px - var(--margin)*2 - var(--gap));
     width: var(--containerWidth1);
+    height: 100%;
     /* max-width: 1400px; */
     /* margin-right: var(--margin); */
-    height: 100vh;
+    /* overflow-y: scroll;
+    scrollbar-width: none; */
     padding-top: 20px;
-    overflow-y: scroll;
-    scrollbar-width: none;
     padding-right: var(--margin);
-    padding-left: calc(var(--gap)/2);
+    float: right;
 }
 
 .full-width {
@@ -98,11 +104,8 @@ nav {
     width: 100%;
 }
 
-/* .page_container div{
-} */
-
 .homepage {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
 }
 
@@ -113,6 +116,11 @@ nav {
 }
 
 .project-item {
+    /* 
+    width 1 - for screen-width 1301px - 1649px (default)
+    width 2 - for screen-width > 1650px
+    width 3 - for screen-width < 1300px
+    */
     --project-itemWidth1: calc(var(--containerWidth1)/4 - var(--margin)/2 - var(--gap)/4);
     --project-itemWidth2: calc(var(--containerWidth2)/4 - var(--margin)/2 - var(--gap)/4);
     --project-itemWidth3: calc(25vw - var(--margin)/2 - var(--gap)*3/4);
@@ -125,7 +133,7 @@ nav {
 
 
 /* 
-Navigation style 
+Navigation text style 
 */
 
 nav a,

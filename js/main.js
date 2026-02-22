@@ -16,7 +16,7 @@ setInterval(() =>{
 // hamburger nav
 $('.nav-toggle').on('click', function() {
 
-    $('.nav_container').toggleClass('no-scrollbar')
+    $('.nav_container').toggleClass('appear')
     $('.nav').toggleClass('open')
 
     return false

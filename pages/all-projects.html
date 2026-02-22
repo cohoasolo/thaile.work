@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>thaile.work</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Instrument+Serif:ital@0;1&family=Rubik+Puddles&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -12,37 +12,32 @@
 
 <body>
     <a class="nav-toggle" href="#">
-            <img src="../assets/hamburger.svg">
+            <img src="/assets/hamburger.svg">
     </a>
 
     <section class="nav_container">
         <nav class="nav">
-            <img id="halftone-texture" src="../assets/halftone-supply.jpg">
+            <img id="halftone-texture" src="/assets/halftone-supply.jpg">
                 
-            <a class="logo" href="../index.html" rel="history">Thai Le</a>
+            <a class="logo" href="/index.html" rel="history">Thai Le</a>
 
-            <section class="nav_about">
+            <div class="nav_about">
                 <a href="About" rel="history">Designer, lettering artist, and typeface enthusiast based in Ho Chi Minh City, Vietnam. &crarr;</a>
-            </section>
+            </div>
             
-            <section class="datetime">
-                <p>My Date</p>
-                <p>My Time</p>
-            </section>
+            <div class="nav_datetime">
+                <div><p>My Date</p><p id="current-date"></p></div>
+                <div class="align-right"><p>My Time</p><p id="current-time"></p></div>
+            </div>
 
-            <section class="datetime">
-                <p id="current-date"></p>
-                <p id="current-time"></p>
-            </section>
-
-            <section class="nav_works">
+            <div class="nav_works">
                 <hr><hr>
                 <h2>Selected Works</h2>
                 <hr><hr>
                 <table>
                     <tr>
-                        <td class="project-name"><a href="Giac" rel="history">Indochinopoly</a></td>
-                        <td class="project-year"><a href="Giac" rel="history">2024-25</a></td>
+                        <td class="project-name"><a href="/pages/project/giac.html" rel="history">giấc</a></td>
+                        <td class="project-year"><a href="/pages/project/giac.html" rel="history">2022-23</a></td>
                     </tr>
                     <tr>
                         <td class="project-name"><a href="Giac" rel="history">Spacefest Launching Campaign</a></td>
@@ -77,13 +72,13 @@
                         <td class="project-year"><a href="Giac" rel="history">2021</a></td>
                     </tr>
                     <tr>
-                        <td class="project-name"><a href="./html/all-projects.html" rel="history">More</a></td>
-                        <td class="project-year"><a href="./html/all-projects.html" rel="history">&rarr;</a></td>
+                        <td class="project-name"><a href="/pages/all-projects.html" rel="history">More</a></td>
+                        <td class="project-year"><a href="/pages/all-projects.html" rel="history">&rarr;</a></td>
                     </tr>
                 </table>
-            </section>
-                
-            <section class="nav_contact">
+            </div>
+            
+            <div class="nav_contact">
                 <hr><hr>
                 <h2>Contact</h2>
                 <hr><hr>
@@ -99,8 +94,7 @@
                         <span>@cohoasolo</span>
                     </div>
                 </a>
-                <!-- <a class="contact" href="https://www.facebook.com/thaile0204" target="_blank">fb/thaile0204</a> -->
-            </section>
+            </div>
 
             <footer>
                 <p>XIN CAM ON!</p>
@@ -108,6 +102,7 @@
             </footer>
         </nav>
     </section>
+
     <section class="page_container">
         <div class="all-works">
             <div class="project-item">
@@ -182,15 +177,12 @@
                     <h3 class="project-title">Indochinopoly</h3>
                 </a>
             </div>
-            
         </div>
-        <!-- <div style="height: 800px; background-color: yellow;"></div> -->
     </section>
 
-<script src="../js/jquery.js"></script>
-<script src="../js/main.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/main.js"></script>
 
 </body>
-
 </html>
 

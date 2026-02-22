@@ -23,6 +23,7 @@ body {
     position: fixed;
     overflow-y: scroll;
     scrollbar-width: none;
+    bottom: 0;
     left: 0;
     z-index: 2;
     /* padding-right: var(--gap); */
@@ -31,6 +32,7 @@ body {
 nav {
     margin-left: var(--margin);
     margin-right: calc(var(--gap)/2);
+    width: stretch;
     position: absolute;
     bottom: 0;
     padding: 32px 20px 20px 20px;
@@ -47,7 +49,7 @@ nav {
         rgb(241, 241, 241) 85%,
         rgb(228, 229, 177) 92%,
         rgb(207, 210, 96) 100%), 
-        url(../assets/halftone-supply.jpg);
+        url(/assets/halftone-supply.jpg);
     background-size: cover, auto 70%;
     background-blend-mode: hard-light;
     background-origin: padding-box;
@@ -86,16 +88,14 @@ nav {
     width 1 - for screen-width 1301px-1649px (default)
     width 2 - for screen-width > 1650px
     */
-    --containerWidth1: calc(100vw - var(--navWidth) - var(--margin)*2 - var(--gap));
-    --containerWidth2: calc(100vw - 400px - var(--margin)*2 - var(--gap));
-    width: var(--containerWidth1);
+    --containerWidth: calc(100vw - var(--navWidth) - var(--margin)*2 - var(--gap));
+    width: var(--containerWidth);
     height: 100%;
     /* max-width: 1400px; */
     /* margin-right: var(--margin); */
     /* overflow-y: scroll;
     scrollbar-width: none; */
-    padding-top: 20px;
-    padding-right: var(--margin);
+    padding: 20px var(--margin) 20px 0;
     float: right;
 }
 
@@ -105,7 +105,7 @@ nav {
 }
 
 .homepage {
-    position: fixed;
+    position: absolute;
     bottom: 20px;
 }
 
@@ -121,11 +121,9 @@ nav {
     width 2 - for screen-width > 1650px
     width 3 - for screen-width < 1300px
     */
-    --project-itemWidth1: calc(var(--containerWidth1)/4 - var(--margin)/2 - var(--gap)/4);
-    --project-itemWidth2: calc(var(--containerWidth2)/4 - var(--margin)/2 - var(--gap)/4);
-    --project-itemWidth3: calc(25vw - var(--margin)/2 - var(--gap)*3/4);
-    width: var(--project-itemWidth1);
-    height: calc(var(--project-itemWidth1)*5/4);
+    --project-itemWidth: calc(var(--containerWidth)/4 - var(--gap)*3/4);
+    width: var(--project-itemWidth);
+    height: calc(var(--project-itemWidth)*5/4);
     background-color:  rgba(225, 255, 0, 0.8);
 }
 
@@ -400,10 +398,7 @@ img:hover {
         display: none;
 }
 
-.no-scrollbar {
-    /* overflow: hidden scroll !important; */
-    scrollbar-width: none;
-}
+
 
 .hide {
     display: none;
@@ -415,12 +410,7 @@ img:hover {
 
 @media (min-width: 1650px) {
     .page_container {
-        width: var(--containerWidth2);
-    }
-
-    .project-item {
-        width: var(--project-itemWidth2);
-        height: calc(var(--project-itemWidth2)*5/4);
+        --containerWidth: calc(100vw - 400px - var(--margin)*2 - var(--gap));
     }
 }
 
@@ -435,23 +425,34 @@ img:hover {
 
 @media (max-width: 1300px) {
     /* hide nav and show nav-toggle */
+
+    body {
+        padding: 20px;
+    }
+
     .nav_container {
-        position: absolute;
         max-width: none;
-        width: 100%;
+        width: 350px;
+        transform: translateY(100%);
         transform: rotate(0.5deg);
-        padding-right: 10px;
-        overflow: hidden;
+        transition: translateY 0.35s ease;
+        /* padding-right: 10px; */
+    }
+
+    .appear {
+        transform: translateY(0), rotate(0.5deg);
     }
 
     .nav_container:hover {
-        transform: rotate(0.5deg);
+        transform: none;
     }
 
     nav {
         transform: translateY(100%);
-        margin: 0;
+        margin-left: 0;
         transition: transform 0.25s ease;
+        transition-delay: 0.15s;
+        width: fit-content;
     }
 
     .nav-toggle {
@@ -463,8 +464,9 @@ img:hover {
     }
 
     .page_container {
-        width: 100vw;
-        padding-left: var(--margin);
+        width: 100%;
+        padding: 0 0 60px 0;
+        float: none;
     }
     
     .page_container .homepage {
@@ -476,12 +478,28 @@ img:hover {
     }
 
     .project-item {
-        width: var(--project-itemWidth3);
-        height: calc(var(--project-itemWidth3)*5/4);
+        --project-itemWidth: calc(33.333vw - var(--margin) - var(--gap)*2/3);
     }
 
+    @media (max-height: 900px) {
+        nav {
+            transform: none;
+            top: 100%;
+            transition: top 0.25s ease;
+        }
+        .open {
+            top: 0;
+
+        }
+    }
 }
 
+@media (max-width: 735px) {
+
+    .project-item {
+        --project-itemWidth: calc(50vw - var(--margin) - var(--gap) - 4px);
+    }
+}
 @media (max-width: 500px) {
     
     .nav_container {
@@ -500,4 +518,6 @@ img:hover {
         box-shadow: none;
     }
 }
+
+
 

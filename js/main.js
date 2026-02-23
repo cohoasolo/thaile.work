@@ -1,5 +1,4 @@
-// my current time
-
+// set my current time
 let time = document.getElementById('current-time');
 let date = document.getElementById('current-date');
 

@@ -1,0 +1,26 @@
+.nav_container {
+    transform: rotate(0) translateY(100%);
+    transition: transform 0.35s ease;
+}
+
+.appear {
+    transform: rotate(1deg) translateY(0);
+}
+
+.nav_container:hover {
+    transform: rotate(1deg) translateY(0);
+}
+
+nav {
+    transform: translateY(100%);
+    transition: transform 0.25s ease;
+    left: 10px;
+}
+
+.open {
+    transform: translateY(0);
+}
+
+.nav-toggle {
+    display: block;
+}

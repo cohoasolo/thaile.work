@@ -1,0 +1,43 @@
+.page_container {
+    --containerWidth: calc(100vw - var(--navWidth) - var(--margin) * 2 - var(--gap));
+}
+
+@media (min-width: 1650px) {
+    .page_container {
+        --containerWidth: calc(100vw - 400px - var(--margin)*2 - var(--gap));
+    }
+}
+
+@media (min-width: 2080px) {
+    .page_container {
+        --containerWidth: calc(100vw - 400px - var(--margin)*2 - var(--gap));
+        float: right;
+     }
+}
+
+@media (max-width: 1300px) {
+    /* Animation when screen-size is shorter than nav */
+    @media (max-height: 900px) {
+        nav {
+            transform: none;
+            top: 100%;
+            transition: top 0.25s ease;
+        }
+        .open {
+            top: 0;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    @media (max-height: 900px) {
+        nav {
+            transform: none;
+            top: 100%;
+            transition: top 0.25s ease;
+        }
+        .open {
+            top: 0;
+        }
+    }
+}

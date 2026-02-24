@@ -7,14 +7,6 @@
     --containerWidth: calc(100vw - var(--navWidth) - var(--margin) * 2 - var(--gap));
 }
 
-.page_container .homepage {
-    padding: 0;
-    left: 50%;
-    bottom: 45%;
-    transform: translateX(-50%);
-    text-align: center;
-}
-
 @media (min-width: 1650px) {
     .page_container {
         --containerWidth: calc(100vw - 400px - var(--margin)*2 - var(--gap));
@@ -29,6 +21,14 @@
 }
 
 @media (max-width: 1300px) {
+    .page_container .homepage {
+        padding: 0;
+        left: 50%;
+        bottom: 45%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+    
     /* Animation when screen-size is shorter than nav */
     @media (max-height: 900px) {
         nav {
@@ -38,7 +38,7 @@
         }
         .open {
             top: 0;
-            margin-top: 80px;
+            margin-top: 100px;
         }
     }
 }
@@ -52,7 +52,7 @@
         }
         .open {
             top: 0;
-            margin-top: 80px;
+            margin-top: 100px;
         }
     }
 }

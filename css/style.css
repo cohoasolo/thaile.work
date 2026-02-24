@@ -43,7 +43,7 @@ nav {
     position: absolute;
     bottom: 0;
     padding: 32px 20px 20px 20px;
-    transform: translateY(87%);
+    transform: translateY(84.5%);
     background-image:
         linear-gradient(180deg,
         rgb(206, 206, 206) 0%,
@@ -149,7 +149,7 @@ nav p,
 nav span {
 	mix-blend-mode: color-burn;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #050505;
     display: block;
 }
 
@@ -425,14 +425,14 @@ Break contents
 
 hr {
     border: none;
-	border-top: 1.5px dashed rgb(0, 0, 0, 0.5);
+	border-top: 1.5px dashed #050505;
 	height: 0px;
     mix-blend-mode: color-burn;
     margin-block: 0.25rem;
 }
 
 hr.double-line {
-    border-top: 4px double rgb(0, 0, 0, 0.5);
+    border-top: 4px double #050505;
 }
 
 
@@ -451,7 +451,7 @@ img {
 .cover-image {
 	width: 100vw;
     max-width: none;
-    transform: translateX(calc(-1 * var(--navWidth) - var(--margin) * 2));
+    transform: translateX(calc(-1 * var(--navWidth) - var(--margin) * 2 - var(--gap)));
     transition: none;
     margin-bottom: 10px;
 }
@@ -646,7 +646,7 @@ Responsive
     .nav_container {
         transform: translateY(100%);
         transition: transform 0.35s ease;
-        width: 100%;
+        width: 100vw;
         padding: 0;
     }
 
@@ -660,8 +660,22 @@ Responsive
 
     nav {
         left: 0;
-        width: stretch;
+        width: 100%;
         margin: 0;
+        padding: 52px 0 20px 0;
+    }
+
+    .logo,
+    .nav_about,
+    .nav_contact,
+    .nav_datetime,
+    .nav_works,
+    .nav_contact {
+        padding: 0 20px 0 20px;
+    }
+
+    .nav_contact span {
+        right: 20px;
     }
 
 }

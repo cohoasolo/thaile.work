@@ -1,5 +1,18 @@
+.homepage {
+    position: absolute;
+    bottom: 20px;
+}
+
 .page_container {
     --containerWidth: calc(100vw - var(--navWidth) - var(--margin) * 2 - var(--gap));
+}
+
+.page_container .homepage {
+    padding: 0;
+    left: 50%;
+    bottom: 45%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 @media (min-width: 1650px) {
@@ -25,6 +38,7 @@
         }
         .open {
             top: 0;
+            margin-top: 80px;
         }
     }
 }
@@ -38,6 +52,7 @@
         }
         .open {
             top: 0;
+            margin-top: 80px;
         }
     }
 }

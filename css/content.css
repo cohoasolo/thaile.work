@@ -34,6 +34,10 @@ nav h2,
     transform: translateY(0);
     }
 
+    .nav_container {
+        overflow-y: hidden;
+    }
+    
     .nav_container:hover {
         transform: translateY(0);
     }

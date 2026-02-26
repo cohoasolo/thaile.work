@@ -24,10 +24,9 @@ nav {
     display: block;
 }
 
-.nav_about,
-.nav_works {
-    margin: 0;
-    max-width: none;
+nav h2,
+.nav_contact span {
+    font-size: 1.5em;
 }
 
 @media (max-width: 500px) {

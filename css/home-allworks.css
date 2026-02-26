@@ -1,11 +1,30 @@
 .homepage {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
 }
 
-.page_container {
-    --containerWidth: calc(100vw - var(--navWidth) - var(--margin) * 2 - var(--gap));
+.all-works {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    padding-top: var(--margin);
 }
+
+.project-item {
+    /* 
+    width 1 - for screen-width 1301px - 1649px (default)
+    width 2 - for screen-width > 1650px
+    width 3 - for screen-width < 1300px
+    */
+    --projectWidth: calc(var(--containerWidth)/4 - var(--gap) * 3/4);
+    width: var(--projectWidth);
+    height: calc(var(--projectWidth) * 5 / 4);
+    background-color:  rgba(225, 255, 0, 0.8);
+}
+
+/* .page_container {
+    --containerWidth: calc(100vw - var(--navWidth) - var(--margin) * 2 - var(--gap));
+} */
 
 @media (min-width: 1650px) {
     .page_container {
@@ -21,6 +40,12 @@
 }
 
 @media (max-width: 1300px) {
+    .page_container {
+        width: calc(100% - var(--margin) * 2);
+        margin-left: var(--margin);
+        margin-right: var(--margin);
+    }
+
     .page_container .homepage {
         padding: 0;
         left: 50%;
@@ -28,9 +53,13 @@
         transform: translateX(-50%);
         text-align: center;
     }
+
+    .project-item {
+        --projectWidth: calc(33.333vw - var(--margin) * 2/3 - var(--gap) * 2/3 - 5px); /* scrollbar-width = 15px / 3 */
+    }
     
     /* Animation when screen-size is shorter than nav */
-    @media (max-height: 900px) {
+    @media (max-height: 870px) {
         nav {
             transform: none;
             top: 100%;
@@ -43,8 +72,13 @@
     }
 }
 
+@media (max-width: 1025px) {
+        .project-item {
+        --projectWidth: calc(50vw - var(--margin) - var(--gap) / 2 - 7.5px); /* scrollbar-width = 15px / 2 */
+    }
+}
 @media (max-width: 500px) {
-    @media (max-height: 900px) {
+    @media (max-height: 870px) {
         nav {
             transform: none;
             top: 100%;

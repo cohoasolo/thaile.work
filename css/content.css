@@ -1,22 +1,23 @@
 .nav_container {
-    transform: rotate(0) translateY(100%);
+    transform: rotate(0);
     transition: transform 0.35s ease;
+
+    display: none;
 }
 
-.appear {
-    transform: rotate(1deg) translateY(0);
-}
-
+.nav_container.appear,
 .nav_container:hover {
-    transform: rotate(1deg) translateY(0);
+    transform: rotate(1deg) translateY(2px);
+
+    display: block;
 }
 
 nav {
     transform: translateY(100%);
-    transition: transform 0.25s ease;
+    transition: transform 0.4s cubic-bezier(0.51, 0.44, 0, 1.04);
 }
 
-.open {
+nav.open {
     transform: translateY(0);
 }
 
@@ -24,21 +25,77 @@ nav {
     display: block;
 }
 
-nav h2,
-.nav_contact span {
-    font-size: 1.5em;
+
+
+/*
+About page
+*/
+.about .nav_container {
+    display: block;
 }
 
+.about .nav_container:hover {
+    transform: rotate(0.5deg) translateX(6px) translateY(2px);
+}
+
+.about nav {
+    transform: translateY(68%);
+}
+
+.about nav:hover {
+    transform: translateY(0);
+}
+
+.about .nav-toggle {
+    display: none;
+}
+
+.about nav h2,
+.about nav h3,
+.about nav .nav_contact span {
+    font-family: "Handjet", sans-serif;
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+}
+
+@media (max-width: 1300px) {
+    .nav_container,
+    .about .nav_container {
+        transform: rotate(0);
+
+        display: none;
+    }
+
+    .nav_container.appear {
+        transform: rotate(1deg) translateX(10px) translateY(2px);
+
+        display: block;
+    }
+
+    .about nav {
+        transform: translateY(100%);
+    }
+
+    .about nav.open {
+        transform: translateY(0);
+    }
+
+    .about .nav-toggle {
+        display: block;
+    }
+
+}
+
+
+/*  */
 @media (max-width: 500px) {
-    .appear {
+    .nav_container.appear,
+    .nav_container:hover {
     transform: translateY(0);
     }
 
-    .nav_container {
-        overflow-y: hidden;
-    }
-    
     .nav_container:hover {
-        transform: translateY(0);
+        transform: rotate(0);
     }
 }

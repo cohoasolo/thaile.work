@@ -73,11 +73,14 @@
 }
 
 @media (max-width: 1025px) {
-        .project-item {
+    .project-item {
         --projectWidth: calc(50vw - var(--margin) - var(--gap) / 2 - 7.5px); /* scrollbar-width = 15px / 2 */
     }
 }
 @media (max-width: 500px) {
+    .project-item {
+        --projectWidth: calc(100vw - var(--margin) * 2);
+    }
     @media (max-height: 870px) {
         nav {
             transform: none;

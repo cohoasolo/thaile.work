@@ -29,7 +29,7 @@ bgToggle()
 
 // check if nav is open when scroll
 document.addEventListener("scroll", function() {
-    if ((!navContainerTag.classList.contains("appear")) || (!navTag.classList.contains("open"))) {
+    if ((!navContainerTag.classList.contains("appear")) && (!navTag.classList.contains("open"))) {
         bgToggle()
     }
 })
@@ -42,13 +42,13 @@ toggleTag.addEventListener("click", function (event) {
     // to open, add class appear and open to the nav container and nav tag respectively
     // then change the toggle icon to close and remove background color
     // add delay for smooth animation of nav and nav container tag
-    if ((!navContainerTag.classList.contains("appear")) || (!navTag.classList.contains("open"))) {
+    if ((!navContainerTag.classList.contains("appear")) && (!navTag.classList.contains("open"))) {
         
         navContainerTag.classList.add("appear")
         
         setTimeout (function() {
             navTag.classList.add("open")
-        })
+        }, 100)
         
         toggleTag.innerHTML = '<img src="/assets/close.svg">'
         toggleTag.classList.remove("background")       
@@ -59,7 +59,7 @@ toggleTag.addEventListener("click", function (event) {
 
         setTimeout (function() {
             navContainerTag.classList.remove("appear")
-        }, 400)
+        }, 200)
 
         toggleTag.innerHTML = '<img src="/assets/hamburger.svg">'
         toggleTag.classList.add("background") 

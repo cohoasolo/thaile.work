@@ -1,15 +1,17 @@
 .nav_container {
-  transform: rotate(0);
   transition: transform 0.35s ease;
 
   display: none;
 }
 
-.nav_container.appear,
-.nav_container:hover {
-  transform: rotate(1deg) translateY(2px);
+.nav_container.appear {
+  transform: rotate(1deg) translateX(10px) translateY(2px);
 
   display: block;
+}
+
+.nav_container.appear:hover {
+    transform: rotate(0.5deg) translateX(5px) translateY(1px);
 }
 
 nav {
@@ -18,7 +20,7 @@ nav {
 }
 
 nav.open {
-  transform: translateY(0);
+  transform: none;
 }
 
 .nav-toggle {
@@ -58,17 +60,18 @@ About page
 }
 
 @media screen and (max-width: 1300px) {
-  .nav_container,
   .about .nav_container {
-    transform: rotate(0);
-
     display: none;
   }
 
-  .nav_container.appear {
+  .about .nav_container.appear {
     transform: rotate(1deg) translateX(10px) translateY(2px);
 
     display: block;
+  }
+
+  .about .nav_container.appear:hover {
+    transform: rotate(0.5deg) translateX(5px) translateY(2px);
   }
 
   .about nav {
@@ -101,17 +104,12 @@ About page
 @media screen and (max-width: 1025px) {
   .nav_container.appear,
   .nav_container.appear:hover {
-    transform: translateX(5px);
+    transform: none;
   }
 }
 
 /*  */
 @media screen and (max-width: 500px) {
-  .nav_container.appear,
-  .nav_container.appear:hover {
-    transform: translateY(0);
-  }
-
   .about p,
   .about td {
     font-size: 1rem;

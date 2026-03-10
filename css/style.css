@@ -65,7 +65,7 @@ body.about {
 }
 
 nav {
-  margin-left: var(--margin);
+  margin-left: calc(var(--margin) / 2);
   margin-right: calc(var(--gap));
   width: stretch;
   position: absolute;
@@ -827,7 +827,7 @@ Responsive
   .nav_container {
     max-width: none;
     width: 350px;
-    transform: rotate(0);
+    transform: none;
     transition: transform 0.35s ease;
 
     display: none;
@@ -845,10 +845,10 @@ Responsive
 
   nav {
     transform: translateY(100%);
-    margin-left: 0;
+    /* margin-left: 0; */
     transition: transform 0.4s cubic-bezier(0.51, 0.44, 0, 1.04);
     width: fit-content;
-    left: 10px;
+    /* left: 10px; */
   }
 
   nav.open {

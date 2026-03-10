@@ -57,7 +57,7 @@ About page
   margin: 0;
 }
 
-@media (max-width: 1300px) {
+@media screen and (max-width: 1300px) {
   .nav_container,
   .about .nav_container {
     transform: rotate(0);
@@ -84,7 +84,7 @@ About page
   }
 
   /* Animation when screen-size is shorter than nav */
-    @media (max-height: 800px) {
+    @media screen and (max-height: 800px) {
         .about nav {
             transform: none;
             top: 100%;
@@ -98,7 +98,7 @@ About page
     }
 }
 
-@media (max-width: 1025px) {
+@media screen and (max-width: 1025px) {
   .nav_container.appear,
   .nav_container.appear:hover {
     transform: translateX(5px);
@@ -106,7 +106,7 @@ About page
 }
 
 /*  */
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .nav_container.appear,
   .nav_container.appear:hover {
     transform: translateY(0);

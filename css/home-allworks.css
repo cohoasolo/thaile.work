@@ -72,20 +72,20 @@ a.project-item {
     --containerWidth: calc(100vw - var(--navWidth) - var(--margin) * 2 - var(--gap));
 } */
 
-@media (min-width: 1650px) {
+@media screen and (min-width: 1650px) {
     .page_container {
         --containerWidth: calc(100vw - 400px - var(--margin)*2 - var(--gap));
     }
 }
 
-@media (min-width: 2080px) {
+@media screen and (min-width: 2080px) {
     .page_container {
         --containerWidth: calc(100vw - 400px - var(--margin)*2 - var(--gap));
         float: right;
      }
 }
 
-@media (max-width: 1300px) {
+@media screen and (max-width: 1300px) {
     .page_container {
         width: calc(100% - var(--margin) * 2);
         margin-left: var(--margin);
@@ -105,7 +105,7 @@ a.project-item {
     }
     
     /* Animation when screen-size is shorter than nav */
-    @media (max-height: 800px) {
+    @media screen and (max-height: 800px) {
         nav {
             transform: none;
             top: 100%;
@@ -119,7 +119,7 @@ a.project-item {
     }
 }
 
-@media (max-width: 1025px) {
+@media screen and (max-width: 1025px) {
     a.project-item {
         --projectWidth: calc(50vw - var(--margin) - var(--gap) / 2 - 7.5px); /* scrollbar-width = 15px / 2 */
 
@@ -134,11 +134,11 @@ a.project-item {
     }
 }
 
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
     a.project-item {
         --projectWidth: calc(100vw - var(--margin) * 2);
     }
-    /* @media (max-height: 800px) {
+    /* @media screen and (max-height: 800px) {
         nav {
             transform: none;
             top: 100%;

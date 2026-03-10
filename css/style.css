@@ -768,7 +768,7 @@ Responsive
   display: none;
 }
 
-@media (min-width: 1650px) {
+@media screen and (min-width: 1650px) {
   /* .page_container {
         --containerWidth: calc(100vw - 400px - var(--margin) * 2 - var(--gap));
     }
@@ -800,7 +800,7 @@ Responsive
   }
 }
 
-@media (min-width: 2080px) {
+@media screen and (min-width: 2080px) {
   .page_container {
     --containerWidth: 1200px;
     float: none;
@@ -822,7 +822,7 @@ Responsive
   }
 }
 
-@media (max-width: 1300px) {
+@media screen and (max-width: 1300px) {
   /* hide nav and show nav-toggle */
   .nav_container {
     max-width: none;
@@ -935,7 +935,7 @@ Responsive
   }
 }
 
-@media (max-width: 1025px) {
+@media screen and (max-width: 1025px) {
   .nav_container.appear {
     transform: translateX(5px);
   }
@@ -1007,7 +1007,7 @@ Responsive
   }
 }
 
-@media (max-width: 735px) {
+@media screen and (max-width: 735px) {
   h1 {
     font-size: 3em;
   }
@@ -1026,7 +1026,7 @@ Responsive
   }
 }
 
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
   body {
     --margin: 10px;
   }

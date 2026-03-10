@@ -1,101 +1,119 @@
 .nav_container {
-    transform: rotate(0);
-    transition: transform 0.35s ease;
+  transform: rotate(0);
+  transition: transform 0.35s ease;
 
-    display: none;
+  display: none;
 }
 
 .nav_container.appear,
 .nav_container:hover {
-    transform: rotate(1deg) translateY(2px);
+  transform: rotate(1deg) translateY(2px);
 
-    display: block;
+  display: block;
 }
 
 nav {
-    transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.51, 0.44, 0, 1.04);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.51, 0.44, 0, 1.04);
 }
 
 nav.open {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .nav-toggle {
-    display: block;
+  display: block;
 }
-
-
 
 /*
 About page
 */
 .about .nav_container {
-    display: block;
+  display: block;
 }
 
 .about .nav_container:hover {
-    transform: rotate(0.5deg) translateX(6px) translateY(2px);
+  transform: rotate(0.5deg) translateX(6px) translateY(2px);
 }
 
 .about nav {
-    transform: translateY(68%);
+  transform: translateY(68%);
 }
 
 .about nav:hover {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .about .nav-toggle {
-    display: none;
+  display: none;
 }
 
 .about nav h2,
 .about nav h3,
 .about nav .nav_contact span {
-    font-family: "Handjet", sans-serif;
-    font-weight: 300;
-    text-align: center;
-    margin: 0;
+  font-family: "Handjet", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  margin: 0;
 }
 
 @media (max-width: 1300px) {
-    .nav_container,
-    .about .nav_container {
-        transform: rotate(0);
+  .nav_container,
+  .about .nav_container {
+    transform: rotate(0);
 
-        display: none;
+    display: none;
+  }
+
+  .nav_container.appear {
+    transform: rotate(1deg) translateX(10px) translateY(2px);
+
+    display: block;
+  }
+
+  .about nav {
+    transform: translateY(100%);
+  }
+
+  .about nav.open {
+    transform: translateY(0);
+  }
+
+  .about .nav-toggle {
+    display: block;
+  }
+
+  /* Animation when screen-size is shorter than nav */
+    @media (max-height: 800px) {
+        .about nav {
+            transform: none;
+            top: 100%;
+            margin-top: 100px;
+            transition: top 0.25s ease;
+        }
+        .about nav.open {
+            transform: none;
+            top: 0;
+        }
     }
-
-    .nav_container.appear {
-        transform: rotate(1deg) translateX(10px) translateY(2px);
-
-        display: block;
-    }
-
-    .about nav {
-        transform: translateY(100%);
-    }
-
-    .about nav.open {
-        transform: translateY(0);
-    }
-
-    .about .nav-toggle {
-        display: block;
-    }
-
 }
 
+@media (max-width: 1025px) {
+  .nav_container.appear,
+  .nav_container.appear:hover {
+    transform: translateX(5px);
+  }
+}
 
 /*  */
 @media (max-width: 500px) {
-    .nav_container.appear,
-    .nav_container:hover {
+  .nav_container.appear,
+  .nav_container.appear:hover {
     transform: translateY(0);
-    }
+  }
 
-    .nav_container:hover {
-        transform: rotate(0);
-    }
+  .about p,
+  .about td {
+    font-size: 1rem;
+  }
 }

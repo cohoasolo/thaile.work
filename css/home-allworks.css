@@ -10,7 +10,7 @@
     padding-top: var(--margin);
 }
 
-.project-item {
+a.project-item {
     /* 
     width 1 - for screen-width 1301px - 1649px (default)
     width 2 - for screen-width > 1650px
@@ -18,8 +18,54 @@
     */
     --projectWidth: calc(var(--containerWidth)/4 - var(--gap) * 3/4);
     width: var(--projectWidth);
-    height: calc(var(--projectWidth) * 5 / 4);
-    background-color:  rgba(225, 255, 0, 0.8);
+    height: auto;
+    opacity: 98%;
+    background-color:  #faf9f7;
+    background-image: url(/assets/halftone-supply.jpg);
+    background-size: cover;
+    background-blend-mode: lighten;
+    box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* text-transform: uppercase; */
+
+    transition: transform 0.25s ease;
+}
+
+.project-thumb {
+    width: calc(100% - 20px);
+    height: calc((var(--projectWidth) - 20px) * 5 / 4);
+    padding: 10px 10px 0 10px;
+
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+}
+
+.project-thumb img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    filter: contrast(1.75) grayscale(1) ;
+    transition: filter 1s ease-out;
+    mix-blend-mode: color-burn;
+}
+
+.project-thumb.invert img {
+    filter: contrast(1.5) grayscale(1) invert(1);
+}
+
+.project-title {
+    mix-blend-mode: color-burn;
+}
+
+.project-item:hover .project-title,
+.project-item:hover .project-thumb img {
+    mix-blend-mode: normal;
+    filter: none;
 }
 
 /* .page_container {
@@ -54,34 +100,45 @@
         text-align: center;
     }
 
-    .project-item {
+    a.project-item {
         --projectWidth: calc(33.333vw - var(--margin) * 2/3 - var(--gap) * 2/3 - 5px); /* scrollbar-width = 15px / 3 */
     }
     
     /* Animation when screen-size is shorter than nav */
-    @media (max-height: 870px) {
+    @media (max-height: 800px) {
         nav {
             transform: none;
             top: 100%;
+            margin-top: 100px;
             transition: top 0.25s ease;
         }
-        .open {
+        nav.open {
             top: 0;
-            margin-top: 100px;
+            transform: none;
         }
     }
 }
 
 @media (max-width: 1025px) {
-    .project-item {
+    a.project-item {
         --projectWidth: calc(50vw - var(--margin) - var(--gap) / 2 - 7.5px); /* scrollbar-width = 15px / 2 */
+
+        transform: none;
+    }
+
+    .project-thumb img,
+    .project-thumb.invert img,
+    .project-title {
+        filter: none;
+        mix-blend-mode: normal;
     }
 }
+
 @media (max-width: 500px) {
-    .project-item {
+    a.project-item {
         --projectWidth: calc(100vw - var(--margin) * 2);
     }
-    @media (max-height: 870px) {
+    /* @media (max-height: 800px) {
         nav {
             transform: none;
             top: 100%;
@@ -91,5 +148,5 @@
             top: 0;
             margin-top: 100px;
         }
-    }
+    } */
 }

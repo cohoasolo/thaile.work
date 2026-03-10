@@ -13,12 +13,12 @@ const toggleTag = document.querySelector("a.nav-toggle")
 const navContainerTag = document.querySelector(".nav_container")
 const navTag = document.querySelector("nav")
 
-// on content pages, when i scroll down, at a certain point
+// on content pages, when i scroll down, at a certain point (80px)
 // add a class to make the nav toggle has white background
 const bgToggle = function() {
     const pixels = window.pageYOffset
 
-    if (pixels > 60) {
+    if (pixels > 80) {
         toggleTag.classList.add("background")
     } else {
         toggleTag.classList.remove("background")

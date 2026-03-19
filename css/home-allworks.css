@@ -49,15 +49,37 @@ a.project-item {
     width: 100%;
     object-fit: cover;
 
-    filter: contrast(1.75) grayscale(1) ;
-    transition: filter 1s ease-out;
-    mix-blend-mode: color-burn;
+    filter: contrast(4) grayscale(1) ;
+    transition: filter 0.5s ease;
 }
 
 .project-thumb.invert img {
     filter: contrast(1.5) grayscale(1) invert(1);
 }
 
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 0;
+    margin: 6px 10px 0 10px;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+
+.project-title {
+    font-family: "Handjet", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin: 0 10px 10px 10px;
+  padding: 0;
+}
+
+.project-thumb img,
+.tags,
 .project-title {
     mix-blend-mode: color-burn;
 }
@@ -72,20 +94,20 @@ a.project-item {
     --containerWidth: calc(100vw - var(--navWidth) - var(--margin) * 2 - var(--gap));
 } */
 
-@media screen and (min-width: 1650px) {
+@media (min-width: 1650px) {
     .page_container {
         --containerWidth: calc(100vw - 400px - var(--margin)*2 - var(--gap));
     }
 }
 
-@media screen and (min-width: 2080px) {
+@media (min-width: 2080px) {
     .page_container {
         --containerWidth: calc(100vw - 400px - var(--margin)*2 - var(--gap));
         float: right;
      }
 }
 
-@media screen and (max-width: 1300px) {
+@media (max-width: 1300px) {
     .page_container {
         width: calc(100% - var(--margin) * 2);
         margin-left: var(--margin);
@@ -105,7 +127,7 @@ a.project-item {
     }
     
     /* Animation when screen-size is shorter than nav */
-    @media screen and (max-height: 800px) {
+    @media (max-height: 800px) {
         nav {
             transform: none;
             top: 100%;
@@ -119,7 +141,7 @@ a.project-item {
     }
 }
 
-@media screen and (max-width: 1025px) {
+@media (max-width: 1025px) {
     a.project-item {
         --projectWidth: calc(50vw - var(--margin) - var(--gap) / 2 - 7.5px); /* scrollbar-width = 15px / 2 */
 
@@ -134,11 +156,11 @@ a.project-item {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) {
     a.project-item {
         --projectWidth: calc(100vw - var(--margin) * 2);
     }
-    /* @media screen and (max-height: 800px) {
+    /* @media (max-height: 800px) {
         nav {
             transform: none;
             top: 100%;

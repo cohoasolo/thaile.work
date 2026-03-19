@@ -59,7 +59,7 @@ toggleTag.addEventListener("click", function (event) {
 
         setTimeout (function() {
             navContainerTag.classList.remove("appear")
-        }, 200)
+        }, 400)
 
         toggleTag.innerHTML = '<img src="/assets/hamburger.svg">'
         toggleTag.classList.add("background") 

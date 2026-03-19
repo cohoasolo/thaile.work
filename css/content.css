@@ -27,6 +27,12 @@ nav.open {
   display: block;
 }
 
+img {
+  border-radius: 3px;
+}
+
+
+
 /*
 About page
 */
@@ -59,7 +65,7 @@ About page
   margin: 0;
 }
 
-@media screen and (max-width: 1300px) {
+@media (max-width: 1300px) {
   .about .nav_container {
     display: none;
   }
@@ -87,7 +93,7 @@ About page
   }
 
   /* Animation when screen-size is shorter than nav */
-    @media screen and (max-height: 800px) {
+    @media (max-height: 800px) {
         .about nav {
             transform: none;
             top: 100%;
@@ -101,15 +107,17 @@ About page
     }
 }
 
-@media screen and (max-width: 1025px) {
+@media (max-width: 1025px) {
   .nav_container.appear,
-  .nav_container.appear:hover {
+  .nav_container.appear:hover,
+  .about .nav_container.appear,
+  .about .nav_container.appear:hover {
     transform: none;
   }
 }
 
 /*  */
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) {
   .about p,
   .about td {
     font-size: 1rem;
